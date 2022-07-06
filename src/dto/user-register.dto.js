@@ -44,7 +44,7 @@ const RegisterDTOSchema = Type.Object({
 });
 
 // Constantes de ajv para validar formatos
-const ajv = new Ajv();
+const ajv = new Ajv({ allErrors: true}); // AllErrors para que podamos generar errores nuestros si pasa
 /** Para hacer validaciones custom como el de la contraseña  */
 ajv.addFormat("password", /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/);
 addFormats(ajv, ['email', 'uuid']).addKeyword('kind').addKeyword('modifier');

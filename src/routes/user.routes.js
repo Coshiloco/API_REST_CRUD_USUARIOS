@@ -1,3 +1,4 @@
+import userRegisterDTO from '#Dto/user-register.dto.js';
 import {Router} from 'express';
 
 // A esto se los llama endpoints
@@ -7,7 +8,9 @@ const userRouter = Router();
 
 // Registro del usuario con post 
 
-userRouter.post('/register');
+userRouter.post('/register', userRegisterDTO, (req,res) => {
+  res.send()
+});
 
 // El usuario logeo
 
