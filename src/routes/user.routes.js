@@ -1,3 +1,4 @@
+import userJWTDTO from '#Dto/user-jwt.dto.js';
 import userLoginDTO from '#Dto/user-login.dto.js';
 import userRegisterDTO from '#Dto/user-register.dto.js';
 import userUnregisterDTO from '#Dto/user-unregister.dto..js';
@@ -21,24 +22,24 @@ userRouter.post('/login', userLoginDTO);
 
 // Obtencion de los datos por parte del usuario
 
-userRouter.get('/profile');
+userRouter.get('/profile', userJWTDTO);
 
 // Casos de actualizacion de datos por parte del usuario
 
 // Caso de actualzacion del nombre y mas informacion
 
-userRouter.patch('/update-data',userUpdatedataDTO);
+userRouter.patch('/update-data',userJWTDTO,userUpdatedataDTO);
 
 // Caso de actualizacion del email
 
-userRouter.patch('/update-email',userUpdateEmailDTO);
+userRouter.patch('/update-email',userJWTDTO,userUpdateEmailDTO);
 
 // Caso de actualizacion de la contraseña
 
-userRouter.patch('/update-password',userUpdatePasswordDTO);
+userRouter.patch('/update-password',userJWTDTO,userUpdatePasswordDTO);
 
 // Eliminacion de los datos del usuario en la plataforma 
 
-userRouter.delete('/unregister', userUnregisterDTO);
+userRouter.delete('/unregister',userJWTDTO, userUnregisterDTO);
 
 export default userRouter;
