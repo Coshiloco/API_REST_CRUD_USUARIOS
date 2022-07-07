@@ -29,6 +29,7 @@
         "prettier": "2.7.1"
     },
     "imports": {
+        "#Lib/*": "./src/lib/*",
         "#Config/*": "./src/config/*",
         "#Controllers/*": "./src/controllers/*",
         "#Dto/*": "./src/dto/*",
