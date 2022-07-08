@@ -1,5 +1,7 @@
 import userLoginController from '#Controllers/user-login.controller.js';
+import userProfileController from '#Controllers/user-profile.controller.js';
 import userRegisterController from '#Controllers/user-register.controller.js';
+import userJWTDTO from '#Dto/user-jwt.dto.js';
 // import userJWTDTO from '#Dto/user-jwt.dto.js';
 import userLoginDTO from '#Dto/user-login.dto.js';
 import userRegisterDTO from '#Dto/user-register.dto.js';
@@ -24,7 +26,7 @@ userRouter.post('/login', userLoginDTO,userLoginController);
 
 // Obtencion de los datos por parte del usuario
 
-// userRouter.get('/profile', userJWTDTO,userProfileController);
+userRouter.get('/profile', userJWTDTO,userProfileController);
 
 // Casos de actualizacion de datos por parte del usuario
 
