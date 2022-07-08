@@ -1,10 +1,12 @@
 import userLoginController from '#Controllers/user-login.controller.js';
 import userProfileController from '#Controllers/user-profile.controller.js';
 import userRegisterController from '#Controllers/user-register.controller.js';
+import userUpdateDataController from '#Controllers/user-update-data.controller.js';
 import userJWTDTO from '#Dto/user-jwt.dto.js';
 // import userJWTDTO from '#Dto/user-jwt.dto.js';
 import userLoginDTO from '#Dto/user-login.dto.js';
 import userRegisterDTO from '#Dto/user-register.dto.js';
+import userUpdatedataDTO from '#Dto/user-update-data.dto.js';
 // import userUnregisterDTO from '#Dto/user-unregister.dto..js';
 // import userUpdatedataDTO from '#Dto/user-update-data.dto.js';
 // import userUpdateEmailDTO from '#Dto/user-update-email.dto.js';
@@ -32,7 +34,7 @@ userRouter.get('/profile', userJWTDTO,userProfileController);
 
 // Caso de actualzacion del nombre y mas informacion
 
-// userRouter.patch('/update-data',userJWTDTO,userUpdatedataDTO,userUpdateDataController);
+userRouter.patch('/update-data',userJWTDTO,userUpdatedataDTO,userUpdateDataController);
 
 // Caso de actualizacion del email
 
