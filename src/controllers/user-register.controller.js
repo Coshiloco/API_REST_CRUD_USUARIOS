@@ -20,7 +20,7 @@ const userRegisterController = async (req,res) => {
     // Generamos la contraseña con el hash
     
     const hashedPassword = await hash(password, 13)
-    
+      
     // Si el userModel esta en minusculas puede tomarlo como clase 
     const NewUser = new UserModel({
       _id,name,surname,email, password: hashedPassword
