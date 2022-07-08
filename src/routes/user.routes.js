@@ -1,6 +1,7 @@
+import userLoginController from '#Controllers/user-login.controller.js';
 import userRegisterController from '#Controllers/user-register.controller.js';
 // import userJWTDTO from '#Dto/user-jwt.dto.js';
-// import userLoginDTO from '#Dto/user-login.dto.js';
+import userLoginDTO from '#Dto/user-login.dto.js';
 import userRegisterDTO from '#Dto/user-register.dto.js';
 // import userUnregisterDTO from '#Dto/user-unregister.dto..js';
 // import userUpdatedataDTO from '#Dto/user-update-data.dto.js';
@@ -19,7 +20,7 @@ userRouter.post('/register', userRegisterDTO,userRegisterController);
 
 // El usuario logeo
 
-// userRouter.post('/login', userLoginDTO,userLoginController);
+userRouter.post('/login', userLoginDTO,userLoginController);
 
 // Obtencion de los datos por parte del usuario
 
