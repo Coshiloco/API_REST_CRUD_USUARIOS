@@ -1,5 +1,6 @@
 import UserModel from '#Schemas/user.schema.js';
 import { compare, hash } from 'bcrypt';
+import { SALT } from '#Constants/salt.js';
 
 const userUpdatePasswordController = async (req, res) => {
     const { id } = req;
@@ -13,9 +14,9 @@ const userUpdatePasswordController = async (req, res) => {
     const checkPassword = await compare(oldPassword, existingUserById.password)
     
     // CUando la contraseña es incorrecta
-    if(!checkPassword) return res.status(401).send('Credenciales incorrectas')
+    if(!checkPassword) return res.status(401).send({ errors: ['Credenciales incorrectas'] })
 
-    const hashedPassword = await hash(newPassword,13);
+    const hashedPassword = await hash(newPassword,SALT);
     existingUserById.password = hashedPassword;
   
     // EL save es para que se guarde una vez modificado

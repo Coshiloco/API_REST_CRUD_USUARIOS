@@ -1,7 +1,7 @@
 // Esquemas de validacion archivo dto-type
 import {
   passwordDTOSchema
-} from '#Lib/dto-types.js';
+} from '#Dto/dto-types.js';
 // Importamos las librerias instaladas para hacer las validaciones
 import {Type} from '@sinclair/typebox';
 // Validaciones

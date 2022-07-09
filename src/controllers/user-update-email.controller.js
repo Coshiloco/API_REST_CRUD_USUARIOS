@@ -13,7 +13,7 @@ const userUpdateEmailController = async (req, res) => {
     const checkPassword = await compare(password, existingUserById.password)
     
     // CUando la contraseña es incorrecta
-    if(!checkPassword) return res.status(401).send('Credenciales incorrectas')
+    if(!checkPassword) return res.status(401).send({ errors: ['Credenciales incorrectas']})
 
     existingUserById.email = email;
   
